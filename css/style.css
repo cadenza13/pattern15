@@ -1,0 +1,315 @@
+@charset "UTF-8";
+
+body{
+  font-family: '游明朝';
+  transition: all 1s;
+}
+
+body.menu-open{
+  overflow: hidden;
+}
+
+body.black{
+  background-color: #000;
+}
+
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(40, 60, 200, .5);
+  transition: all .5s;
+  z-index: 3;
+}
+
+header.menu-open{
+  background-color: rgb(40, 60, 200);
+}
+
+header > h1{
+  font-size: 32px;
+  font-weight: bold;
+  margin-left: 50px;
+  line-height: 2;
+  color: #fff;
+  letter-spacing: .2em;
+}
+
+header > i{
+  font-size: 24px;
+  margin-right: 30px;
+  color: #fff;
+  cursor: pointer;
+}
+
+header > i.hidden{
+  display: none;
+}
+
+.menu{
+  position: fixed;
+  top: 64px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 2;
+  overflow-y: scroll;
+  opacity: 0;
+  transition: all .5s;
+}
+
+.menu.open{
+  opacity: 1;
+}
+
+.menu > ul{
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 100px;
+  justify-content: space-between;
+  width: 70%;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.menu > ul > li > a{
+  display: inline-block;
+  width: 80%;
+  height: 50%;
+}
+
+.menu > ul > li > a > i{
+  font-size: 24px;
+}
+
+.menu > ul > li > a > h2{
+  font-size: 14px;
+  padding-top: 10px;
+}
+
+.menu > small{
+  display: block;
+  text-align: center;
+  margin: 50px 0;
+}
+
+.head-image{
+  width: 100%;
+  height: 300px;
+  margin-top: 64px;
+  object-fit: cover;
+  opacity: .8;
+}
+
+article{
+  margin: 50px 0;
+  text-align: center;
+}
+
+article > p{
+  font-size: 18px;
+  opacity: .8;
+}
+
+article > p + p{
+  margin-top: 50px;
+}
+
+article > a{
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 50px;
+  padding: 20px 60px;
+  color: #fff;
+  border-bottom: 4px solid rgb(20, 50, 100);
+  border-radius: 20px;
+  background-color: rgba(30, 80, 150, .7);
+  cursor: pointer;
+}
+
+article > a::after{
+  content: '>>';
+  font-size: 14px;
+  position: absolute;
+  right: 20px;
+}
+
+main > section{
+  margin: 0 0 100px;
+  text-align: center;
+}
+
+main > section > .item{
+  position: relative;
+  overflow: hidden;
+}
+
+main > section:nth-of-type(1) > .item{
+  text-align: left;
+}
+
+main > section:nth-of-type(2) > .item{
+  text-align: right;
+}
+
+main > section > .item > div{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgb(20, 20, 120);
+  transition: all 1s;
+}
+
+main > section:nth-of-type(3) > .item > div{
+  width: 50%;
+}
+
+main > section:nth-of-type(3) > .item > div + div{
+  margin-left: auto;
+}
+
+main > section > .item > div.move{
+  transform: translateX(640px);
+}
+
+main > section:nth-of-type(2) > .item > div.move{
+  transform: translateX(-640px);
+}
+
+main > section:nth-of-type(3) > .item > div.move{
+  transform: translateX(-320px);
+}
+
+main > section:nth-of-type(3) > .item > div + div.move{
+  transform: translateX(320px);
+}
+
+main > section > p{
+  font-size: 16px;
+  margin-top: 8px;
+  opacity: .8;
+}
+
+main > section > h2{
+  font-size: 24px;
+  margin: 10px 0 30px;
+  opacity: .8;
+}
+
+main > section > ul{
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+}
+
+main > section > ul > li{
+  font-size: 28px;
+  padding: 20px 50px;
+  color: #fff;
+  border: 4px solid #ccc;
+  border-radius: 30px;
+  background-color: rgba(30, 150, 50, .7);
+  cursor: pointer;
+}
+
+nav > section{
+  position: relative;
+  height: 100px;
+  margin-bottom: 50px;
+  background-color: #333;
+}
+
+nav > section > img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .5;
+}
+
+nav > section > h2{
+  position: absolute;
+  bottom: 0;
+  right: 30%;
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff;
+}
+
+nav > section > a{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 18px;
+  color: #fff;
+  padding: 4px 16px;
+  border-radius: 8px;
+  background-color: rgb(50, 70, 180);
+  box-shadow: 0 4px 0 rgb(20, 40, 120);
+}
+
+nav > section > a::after{
+  content: '>>';
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+footer{
+  margin-top: 100px;
+  background-color: #000;
+  transition: all 1s;
+}
+
+footer.white{
+  background-color: #fff;
+}
+
+footer > p{
+  display: inline-block;
+  margin: 10px 10px 30px;
+  font-size: 16px;
+  line-height: 2;
+}
+
+footer > ul{
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 0 auto;
+}
+
+footer > ul > li{
+  width: 50%;
+  text-align: center;
+  margin-bottom: 20px;
+  border-left: 1px solid #000;
+}
+
+footer > ul > li:nth-of-type(even){
+  border-right: 1px solid #000;
+}
+
+footer > ul > li > a{
+  font-size: 18px;
+  transition: all 1s;
+}
+
+footer > ul > li > a.blue{
+  color: rgb(50, 20, 200);
+}
+
+footer > small{
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  padding: 20px 0 30px;
+}
