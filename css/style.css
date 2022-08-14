@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 body{
-  font-family: '游明朝';
+  font-family: '游明朝', 'ヒラギノ明朝 ProN', serif;
   transition: all 1s;
 }
 
@@ -59,12 +59,12 @@ header > i.hidden{
   background-color: #fff;
   z-index: 2;
   overflow-y: scroll;
-  opacity: 0;
   transition: all .5s;
 }
 
-.menu.open{
-  opacity: 1;
+.menu.hidden{
+  pointer-events: none;
+  opacity: 0;
 }
 
 .menu > ul{
@@ -159,6 +159,10 @@ main > section:nth-of-type(2) > .item{
   text-align: right;
 }
 
+main > section > .item > img{
+  width: 80%;
+}
+
 main > section > .item > div{
   position: absolute;
   top: 0;
@@ -178,19 +182,19 @@ main > section:nth-of-type(3) > .item > div + div{
 }
 
 main > section > .item > div.move{
-  transform: translateX(640px);
+  transform: translateX(80%);
 }
 
 main > section:nth-of-type(2) > .item > div.move{
-  transform: translateX(-640px);
+  transform: translateX(-80%);
 }
 
 main > section:nth-of-type(3) > .item > div.move{
-  transform: translateX(-320px);
+  transform: translateX(-80%);
 }
 
 main > section:nth-of-type(3) > .item > div + div.move{
-  transform: translateX(320px);
+  transform: translateX(80%);
 }
 
 main > section > p{
@@ -312,4 +316,36 @@ footer > small{
   text-align: center;
   font-size: 12px;
   padding: 20px 0 30px;
+}
+
+@media(max-width: 700px){
+  main > section > ul > li{
+    font-size: 20px;
+    padding: 15px 30px;
+  }
+}
+
+@media(max-width: 600px){
+  nav > section > h2{
+    position: absolute;
+    top: 10px;
+    bottom: auto;
+    right: 50px;
+  }
+}
+
+@media(max-width: 500px){
+  main > section > ul{
+    display: block;
+    width: 70%;
+  }
+
+  main > section > ul > li{
+    font-size: 28px;
+    padding: 10px 0;
+  }
+
+  main > section > ul > li + li{
+    margin-top: 20px;
+  }
 }

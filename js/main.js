@@ -47,7 +47,7 @@
     menuBtn.addEventListener('click', () =>{
       menuBtns[0].classList.toggle('hidden');
       menuBtns[1].classList.toggle('hidden');
-      menu.classList.toggle('open');
+      menu.classList.toggle('hidden');
       body.classList.toggle('menu-open');
       header.classList.toggle('menu-open');
     });
